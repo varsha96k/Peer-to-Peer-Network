@@ -14,3 +14,15 @@ Upon finishing the download of a chunk, a peer must register that chunk with the
 ### 4. Failure Tolerance: 
 The program does not crash if a peer or the server unexpectedly fails or leaves the network. Also, when the peer recovers, it is capable to re-join the network and resume uploading and downloading.
 
+## Running the Program:
+### Server Program:
+1. gcc Server.c -o server –lsqlite3 –lm –lpthread
+2. ./server <PortNumber>
+(Sample: ./server 9000)
+
+### Peer Program:
+1. gcc Client.c -o client –lm –lpthread
+2. ./client <ServerPortNumber> <PeerPortNumber> <DataFolder(where the downloaded file will be placed)> <Directory>
+(Sample: ./client 9000, 9001, “../dataFolder/”, “../publishDirectory/”)
+
+Note: Use CreateDB.c to create server (a sqlite3 database which is used to track all the files/chunks in the system)
