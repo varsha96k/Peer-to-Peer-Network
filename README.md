@@ -11,6 +11,6 @@ Peers and servers are able to support multiple connections simultaneously.
 When a peer downloads chunks from another peer, it downloads uses ”rarest first” approach to determine which chunk to download.
 ### 3. Chunk Download Completion: 
 Upon finishing the download of a chunk, a peer must register that chunk with the server to become a source (of that chunk) for other peers.
-### Failure Tolerance: 
+### 4. Failure Tolerance: 
 The program does not crash if a peer or the server unexpectedly fails or leaves the network. Also, when the peer recovers, it is capable to re-join the network and resume uploading and downloading.
 
